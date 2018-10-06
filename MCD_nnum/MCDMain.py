@@ -1,4 +1,8 @@
+
 def Lectura_Cantidad():
+    
+    global cant_numeros
+   
     
     while True:
         
@@ -7,79 +11,91 @@ def Lectura_Cantidad():
         if(cant_numeros>0):
             break
     
-    return cant_numeros
-
-
-
-def Mcd_f():
     
-    for i in range(0,Lectura_Cantidad()):
+
+
+def Lectura_Numeros(cant_numeros):
+    
+   
+    
+    global num
+    
+    for i in range(0, cant_numeros):
+        
+        num.append(i)
+        
+        num[i]=int(input(f"Ingrese numero {i+1}: "))
+            
+           
+        
+def Calculo_Mcd(num, cant_numeros):
+    
+    global mcd
+    
+    for j in range(0, cant_numeros):
+        
+        if(j==0):
+          mcd=num[j]
         
         while True:
             
-            num=int(input(f"Ingrese numero {i+1}: "))
-            
-            if(num>0):
-                break
-        
-        
-        if(i==0):
-            mcd=num
-        
-        while True:
-            
-            resto=mcd%num
-            mcd=num
-            num=resto
+            resto=mcd%num[j]
+            mcd=num[j]
+            num[j]=resto
             
             if(resto==0):
                 break
-            
     
-    return mcd
+    
+    
+    
 
-
-def ImprimirResultado_mcd():
-    print(f"El maximo comun divisor es: {almacen_resultado_mcd}")
+def Imprimir_Resultado(mcd):
+    
+    print(f"El maximo comun divisor es: {mcd}")
     
 
 
 def Menu_Retorno():
     
+   
+    global variable_retorno
     while True:
         variable_retorno=int(input("DESEA VOLVER: (SI:1  NO:0): "))
+        
         if(variable_retorno==1 or variable_retorno==0):
             break
     
-    return variable_retorno
-    
 
-
-def Mensaje_despedida():
+def Mensaje_despedida(variable_retorno):
     
-    if(almacen_retorno==0):
+    if(variable_retorno==0):
         print("\n")
         print("GRACIAS Runway IS ;)")
         
-    
+ 
 #
 #
-#    
 #Estructura principal
 
 while True:
     
-    almacen_resultado_mcd=Mcd_f()
+    num=[]
     
-    ImprimirResultado_mcd()
+    Lectura_Cantidad()
     
-    almacen_retorno=Menu_Retorno()
+    Lectura_Numeros(cant_numeros)
     
-    if(almacen_retorno!=1):
+    Calculo_Mcd(num, cant_numeros)
+    
+    Imprimir_Resultado(mcd)
+    
+    Menu_Retorno()
+    
+    if(variable_retorno!=1):
          break
 
-Mensaje_despedida()
-
+Mensaje_despedida(variable_retorno)
 
             
             

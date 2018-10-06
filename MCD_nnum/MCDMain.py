@@ -2,8 +2,6 @@
 def Lectura_Cantidad():
     
     global cant_numeros
-   
-    
     while True:
         
         cant_numeros=int(input("Ingrese la cantidad de numeros a evaluar: "))
@@ -11,15 +9,9 @@ def Lectura_Cantidad():
         if(cant_numeros>0):
             break
     
-    
-
-
 def Lectura_Numeros(cant_numeros):
     
-   
-    
     global num
-    
     for i in range(0, cant_numeros):
         
         num.append(i)
@@ -31,7 +23,6 @@ def Lectura_Numeros(cant_numeros):
 def Calculo_Mcd(num, cant_numeros):
     
     global mcd
-    
     for j in range(0, cant_numeros):
         
         if(j==0):
@@ -48,13 +39,10 @@ def Calculo_Mcd(num, cant_numeros):
     
     
     
-    
-
 def Imprimir_Resultado(mcd):
     
     print(f"El maximo comun divisor es: {mcd}")
     
-
 
 def Menu_Retorno():
     
@@ -74,8 +62,6 @@ def Mensaje_despedida(variable_retorno):
         print("GRACIAS Runway IS ;)")
         
  
-#
-#
 #Estructura principal
 
 while True:

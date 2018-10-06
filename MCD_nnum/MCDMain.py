@@ -1,15 +1,14 @@
 
-def Lectura_Cantidad():
+def Lectura_Datos():
     
     global cant_numeros
+    
     while True:
         
         cant_numeros=int(input("Ingrese la cantidad de numeros a evaluar: "))
         
         if(cant_numeros>0):
             break
-    
-def Lectura_Numeros(cant_numeros):
     
     global num
     for i in range(0, cant_numeros):
@@ -20,7 +19,7 @@ def Lectura_Numeros(cant_numeros):
             
            
         
-def Calculo_Mcd(num, cant_numeros):
+def Calculo_Logica(num, cant_numeros):
     
     global mcd
     for j in range(0, cant_numeros):
@@ -39,23 +38,16 @@ def Calculo_Mcd(num, cant_numeros):
     
     
     
-def Imprimir_Resultado(mcd):
+def Interaccion(mcd):
     
     print(f"El maximo comun divisor es: {mcd}")
     
-
-def Menu_Retorno():
-    
-   
     global variable_retorno
     while True:
         variable_retorno=int(input("DESEA VOLVER: (SI:1  NO:0): "))
         
         if(variable_retorno==1 or variable_retorno==0):
             break
-    
-
-def Mensaje_despedida(variable_retorno):
     
     if(variable_retorno==0):
         print("\n")
@@ -68,22 +60,11 @@ while True:
     
     num=[]
     
-    Lectura_Cantidad()
+    Lectura_Datos()
     
-    Lectura_Numeros(cant_numeros)
+    Calculo_Logica(num, cant_numeros)
     
-    Calculo_Mcd(num, cant_numeros)
-    
-    Imprimir_Resultado(mcd)
-    
-    Menu_Retorno()
+    Interaccion(mcd)
     
     if(variable_retorno!=1):
          break
-
-Mensaje_despedida(variable_retorno)
-
-            
-            
-        
-        

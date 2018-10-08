@@ -1,28 +1,39 @@
 
-def Lectura_Datos():
-    
-    global cant_numeros
-    
-    while True:
+def Lectura_Cantidad():
         
-        cant_numeros=int(input("Ingrese la cantidad de numeros a evaluar: "))
-        
-        if(cant_numeros>0):
-            break
-    
-    global num
-    for i in range(0, cant_numeros):
-        
-        num.append(i)
-        
-        num[i]=int(input(f"Ingrese numero {i+1}: "))
+        while True:
             
-           
+            cant_numeros=int(input("Ingrese la cantidad de numeros a evaluar: "))
+            
+            if(cant_numeros>0):
+                
+                break
         
-def Calculo_Logica(num, cant_numeros):
+        return cant_numeros
+
+def Lectura_Numeros():
     
-    global mcd
-    for j in range(0, cant_numeros):
+        global num
+        global Valor_Cantidad
+        
+        Valor_Cantidad=Lectura_Cantidad()
+              
+        for i in range(0, Valor_Cantidad):
+            
+            num.append(i)
+            
+            num[i]=int(input(f"Ingrese numero {i+1}: "))
+            
+        
+def Lectura():
+    
+    Lectura_Numeros()
+    
+    
+  
+def Calculo_Logica():
+    
+    for j in range(0, Valor_Cantidad):
         
         if(j==0):
           mcd=num[j]
@@ -36,35 +47,39 @@ def Calculo_Logica(num, cant_numeros):
             if(resto==0):
                 break
     
+    return mcd
     
     
-def Interaccion(mcd):
     
-    print(f"El maximo comun divisor es: {mcd}")
+def Interaccion():
     
-    global variable_retorno
+    global var_retorno
+    
+    print(f"El maximo comun divisor es: {Valor_mcd}")
+    
     while True:
-        variable_retorno=int(input("DESEA VOLVER: (SI:1  NO:0): "))
+        var_retorno=int(input("DESEA VOLVER: (SI:1  NO:0): "))
         
-        if(variable_retorno==1 or variable_retorno==0):
+        if(var_retorno==1 or var_retorno==0):
             break
     
-    if(variable_retorno==0):
+    if(var_retorno==0):
         print("\n")
         print("GRACIAS Runway IS ;)")
         
- 
+#
+#
 #Estructura principal
 
 while True:
     
     num=[]
     
-    Lectura_Datos()
+    Lectura()
     
-    Calculo_Logica(num, cant_numeros)
+    Valor_mcd=Calculo_Logica()
     
-    Interaccion(mcd)
+    Interaccion()
     
-    if(variable_retorno!=1):
+    if(var_retorno!=1):
          break

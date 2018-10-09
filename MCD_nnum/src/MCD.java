@@ -1,57 +1,29 @@
-import java.util.Scanner;
 
 public class MCD
 {
 	public static void main(String[] ARGS)
 	{
-		int n;
-		int num;
-		int r;
-		int mcd = 0;
-		int varret;
+		int num[]= new int[50];
+		int Cantidad_Num;
+		int Resultado_mcd;
+		int Variable_Ret;
 		
 		do {
 			
-		do {
-		Scanner cin=new Scanner(System.in);
-		System.out.print("Ingrese la cantidad de numeros a evaluar: \n");
-		n=cin.nextInt();
+		Lectura myclase1= new Lectura();
+		Cantidad_Num=myclase1.Lectura_Cantidad();
+		myclase1.Lectura_Numeros(Cantidad_Num, num);
 		
-		}while(n<=0);
+		Logica myclase2= new Logica();
+		Resultado_mcd=myclase2.Calculo_mcd(Cantidad_Num, num);
 		
-		int i;
-		for(i=0; i<n; i++) {
-			do {
-				Scanner cinnum= new Scanner(System.in);
-				System.out.println("Ingrese numero "+(i+1)+": ");
-				num=cinnum.nextInt();
-			}while(num<=0);
+		Interaccion myclase3= new Interaccion();
+		myclase3.ImprimirResultado(Resultado_mcd);
+		Variable_Ret=myclase3.MenuRetorno();
 		
 		
-		if(i==0) {mcd=num;}
-		
-		do{
-			r=mcd%num;
-			mcd=num;
-			num=r;
-			
-			
-		}while(r!=0);
-		
-		}
-		
-		System.out.println("El Maximo Comun Divisor es:  "+mcd);
-		
-		do {
-		Scanner cinret=new Scanner(System.in);
-		System.out.println("\n \n DESEA VOLVER: (SI:1 NO:0): ");
-		varret=cinret.nextInt();
-		}while(varret!=1 && varret!=0);
-		
-	}while(varret==1);
+	}while(Variable_Ret==1);
 	
-	if(varret==0) {System.out.println("GRACIAS Runway IS ;) ");}
-		
 	}
 	
 }

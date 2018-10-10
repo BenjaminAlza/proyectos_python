@@ -1,32 +1,45 @@
 import java.util.Scanner;
 
 public class Lectura {
-	
-	public int Lectura_Cantidad(){
+
+	public static int Lectura_Cantidad(){
 		
+		Scanner cin=new Scanner(System.in);
 		int n;
-		
 		do {
-			Scanner cin=new Scanner(System.in);
-			System.out.print("Ingrese la cantidad de numeros a evaluar: \n");
+			
+			System.out.print("Ingrese la cantidad de numeros a evaluar: ");
 			n=cin.nextInt();
 		}while(n<=0);
+		return n;		
+	}
+	
+	public static int Lectura_Numeros(){
 		
-		return n;
-			
-	}
-	
-	public void Lectura_Numeros(int Cantidad_Num, int num[]){
-			
-		int i;
 		Scanner cinnum= new Scanner(System.in);
-		for(i=0; i<Cantidad_Num; i++) {
+		int num;
 			do {
-				System.out.println("Ingrese numero "+(i+1)+": ");
-				num[i]=cinnum.nextInt();
-			}while(num[i]<=0);
-				
-		}
+				System.out.println("Ingrese Numero: ");
+				num=cinnum.nextInt();
+			}while(num<=0);
+
+		return num;
+		
+
 	}
 	
+	
+	public static int Lectura_Retorno() {
+		
+		Scanner cinret=new Scanner(System.in);
+		int auxret;
+		
+		do {
+		System.out.println("DESEA VOLVER: (SI:1 NO:0): ");
+		auxret=cinret.nextInt();
+		}while(auxret!=1 && auxret!=0);
+		
+		return auxret;
+	
+	}
 }

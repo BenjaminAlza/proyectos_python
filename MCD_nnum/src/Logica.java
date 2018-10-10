@@ -1,24 +1,25 @@
 
-public class Logica {
+public class Logica{
 	
-	public int Calculo_mcd(int Cantidad_Num, int num[]) {
+	public static int Calculo_mcd(int Cantidad_Aux2) {
 		
+		int numprov;
 		int mcd=0;
 		int r;
-		int j;
-		for(j=0; j<Cantidad_Num; j++) {
-		
-		if(j==0) {mcd=num[j];}
-		do{
-			r=mcd%num[j];
-			mcd=num[j];
-			num[j]=r;
+		int j;  
+		for(j=0; j<Cantidad_Aux2; j++) {
 			
-		}while(r!=0);
-		
+		   numprov=Lectura.Lectura_Numeros();
+		   if(j==0) {mcd=numprov;}
+		   do{
+		   	  r=mcd%numprov;
+			  mcd=numprov;
+			  numprov=r;
+			
+		   }while(r!=0);
+		 
 		}
 		
 		return mcd;
 	}
-
 }

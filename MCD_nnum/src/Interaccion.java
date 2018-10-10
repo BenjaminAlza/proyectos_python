@@ -1,25 +1,23 @@
-import java.util.Scanner;
-
 public class Interaccion {
 	
-	public void ImprimirResultado(int Resultado_mcd) {
+	
+	public static void ImprimirDato() {
 		
-		System.out.println("El Maximo Comun Divisor es:  "+Resultado_mcd);
+		int AuxCant, mensajemcd;
+		
+		AuxCant=Lectura.Lectura_Cantidad();
+		mensajemcd=Logica.Calculo_mcd(AuxCant);
+		
+		System.out.println("\n El Maximo Comun Divisor es:  "+mensajemcd);
 		
 	}
 	
-	public int MenuRetorno() {
+	public static void MenuRetorno() {
 		
-		int varret;
-		Scanner cinret=new Scanner(System.in);
-		do {
-			System.out.println("\n \n DESEA VOLVER: (SI:1 NO:0): ");
-			varret=cinret.nextInt();
-		}while(varret!=1 && varret!=0);
-		
-		if(varret==0) {System.out.println("\n \n \n GRACIAS Runway IS ;) ");}
-		
-		return varret;
+		int retorno;
+		retorno=Lectura.Lectura_Retorno();
+		if(retorno==0) {System.out.println("\n \n \n GRACIAS Runway IS ;) ");}
+		else{MCD.main(null);}
 		
 	}
 
